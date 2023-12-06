@@ -9,9 +9,8 @@ async function fetchData() {
         var endDateString = focusDate[1]
         var stockSelect = document.getElementById('stockSelect')
         var symbol = stockSelect.value
-        var apiKey = "D3P6GXCOLRGYL1FU"
+        var apiKey = "demo" // put your own API Key here
         var url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&outputsize=full&symbol=${symbol}&apikey=${apiKey}`
-        // var url = `http://localhost:3001/data.json`
         var response = await fetch(url)
         var data = await response.json()
         var sortedData = reOrderTimeSeries(data["Time Series (Daily)"]) // in ascending order
