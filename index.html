@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fetch API Data Example</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Dropdown for stock selection -->
+     <label for="stockSelect">Choose a stock:</label>
+     <select id="stockSelect">
+         <!-- Add more stocks as needed -->
+     </select>
+ 
+     <!-- Radio buttons for time frame selection -->
+     <div id="timeFrame">
+         <label><input type="radio" name="timeframe" value="1"> 1 Year</label>
+         <label><input type="radio" name="timeframe" value="2"> 2 Years</label>
+         <label><input type="radio" name="timeframe" value="5"> 5 Years</label>
+         <label><input type="radio" name="timeframe" value="10"> 10 Years</label>
+     </div>
+    <button id="fetchButton">Fetch Data</button>
+    <div id="dataDisplay">...</div>
+</body>
+</html>
