@@ -71,37 +71,6 @@ function calculateBestReturnDay(dcaValue, boughtList, recentPrice){
     return result
 }
 
-function calculateBestDayForDCA(timeSeries) {
-    // Initialize an object to hold aggregate data
-    var dayAggregates = {}
-
-    // Process each day's data
-    for (var date in timeSeries) {
-        var dayOfMonth = new Date(date).getDate()
-        var closePrice = parseFloat(timeSeries[date]["4. close"])
-
-        // Aggregate data for each day of the month
-        if (!dayAggregates[dayOfMonth]) {
-            dayAggregates[dayOfMonth] = { total: 0, count: 0 }
-        }
-        dayAggregates[dayOfMonth].total += closePrice
-        dayAggregates[dayOfMonth].count += 1
-    }
-
-    // Calculate average and find the best day
-    var bestDay = null
-    var bestAverage = 0
-    for (var day in dayAggregates) {
-        var average = dayAggregates[day].total / dayAggregates[day].count
-        if (average > bestAverage) {
-            bestAverage = average
-            bestDay = day
-        }
-    }
-
-    return bestDay
-}
-
 function reOrderTimeSeries(timeSeries){
     var data = timeSeries
     var sortedKeys = Object.keys(data).sort()
